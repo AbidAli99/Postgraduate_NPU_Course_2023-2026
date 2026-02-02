@@ -1,0 +1,1153 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float} % Add the float package
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\title{Mathematical Statistics Assignment 5}
+\author{ABID ALI (Student ID: 2023280099)}
+\date{November 23, 2024}
+
+\begin{document}
+
+\maketitle
+
+\newpage % Forces the following content to appear on a new page
+
+\section*{5.2.3}
+
+Let $X_1, \dots, X_n$ be a random sample from a uniform distribution on the interval $(\theta - 1, \theta + 1)$.
+
+\begin{enumerate}
+    \item[(a)] Find a moment estimator for $\theta$.
+    \item[(b)] Use the following data to obtain a moment estimate for $\theta$:
+    \[
+    11.72, \; 12.81, \; 12.09, \; 13.47, \; 12.37.
+    \]
+\end{enumerate}
+
+\section*{Solution:}
+
+Let $\sum X_i \sim U(\theta - 1, \theta + 1)$.
+
+By definition:
+\[
+f(x) = 
+\begin{cases} 
+\frac{1}{\theta + 1 - (\theta - 1)}, & \text{if } \theta - 1 < x < \theta + 1, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+\section*{(a) Moment Estimator for $\theta$}
+By definition:
+\[
+E(\bar{X}) = \frac{\theta - 1 + \theta + 1}{2}.
+\]
+\[
+E(\bar{X}) = \theta.
+\]
+
+Thus:
+\[
+\hat{\theta} = \bar{X}.
+\]
+
+\section*{(b) Moment Estimate for $\theta$}
+Using the data:
+\[
+\hat{\theta} = \bar{X} = \frac{11.72 + 12.81 + 12.09 + 13.47 + 12.37}{5}.
+\]
+\[
+\hat{\theta} = 53.18.
+\]
+
+
+\section*{5.2.7}
+
+
+Let $X_1, \dots, X_n$ be a random sample from a population with pdf:
+\[
+f(x) = 
+\begin{cases} 
+\frac{2\alpha^2}{x^3}, & x \geq \alpha, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+Find a method of moments estimator for $\alpha$.
+
+
+\section*{Solution:}
+
+To find a method of moments estimator for $\alpha$, we proceed as follows:
+
+\section*{Step 1: Probability Density Function (PDF)}
+The given PDF is:
+\[
+f(x) =
+\begin{cases} 
+\frac{2\alpha^2}{x^3}, & x \geq \alpha, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+This defines a continuous random variable $X$ for $x \geq \alpha$, where $\alpha > 0$ is the parameter to be estimated.
+
+\section*{Step 2: Calculate the Expected Value}
+Using the method of moments, we equate the theoretical mean $\mathbb{E}[X]$ of the distribution to the sample mean $\bar{X}$. The mean $\mathbb{E}[X]$ is:
+\[
+\mathbb{E}[X] = \int_{\alpha}^\infty x f(x) \, dx.
+\]
+
+Substitute $f(x) = \frac{2\alpha^2}{x^3}$:
+\[
+\mathbb{E}[X] = \int_{\alpha}^\infty x \cdot \frac{2\alpha^2}{x^3} \, dx = 2\alpha^2 \int_{\alpha}^\infty \frac{1}{x^2} \, dx.
+\]
+
+The integral is:
+\[
+\int_{\alpha}^\infty \frac{1}{x^2} \, dx = \left[ -\frac{1}{x} \right]_{\alpha}^\infty = \left( 0 - \left( -\frac{1}{\alpha} \right) \right) = \frac{1}{\alpha}.
+\]
+
+Thus:
+\[
+\mathbb{E}[X] = 2\alpha^2 \cdot \frac{1}{\alpha} = 2\alpha.
+\]
+
+\section*{Step 3: Equate to the Sample Mean}
+The sample mean $\bar{X}$ is:
+\[
+\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i.
+\]
+
+Using the method of moments:
+\[
+\mathbb{E}[X] = \bar{X}.
+\]
+
+Substitute $\mathbb{E}[X] = 2\alpha$:
+\[
+2\alpha = \bar{X}.
+\]
+
+Solve for $\alpha$:
+\[
+\hat{\alpha} = \frac{\bar{X}}{2}.
+\]
+
+\section*{Final Answer}
+The method of moments estimator for $\alpha$ is:
+\[
+\hat{\alpha} = \frac{\bar{X}}{2}.
+\]
+
+\section*{5.2.10}
+
+Let $X_1, \dots, X_n$ be a random sample from a distribution with the pdf:
+\[
+f(x) =
+\begin{cases}
+\frac{2\beta - 2x}{\beta^2}, & 0 < x < \beta, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+Use the method of moments to obtain an estimator of $\beta$.
+
+\section*{Solution:}
+
+To find the method of moments estimator for $\beta$, we proceed as follows:
+
+\section*{Step 1: Probability Density Function (PDF)}
+The given PDF is:
+\[
+f(x) =
+\begin{cases}
+\frac{2\beta - 2x}{\beta^2}, & 0 < x < \beta, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+This describes a random variable $X$ defined on the interval $(0, \beta)$.
+
+\section*{Step 2: Find the Expected Value $\mathbb{E}[X]$}
+The expected value is given by:
+\[
+\mathbb{E}[X] = \int_0^\beta x f(x) \, dx.
+\]
+
+Substitute $f(x) = \frac{2\beta - 2x}{\beta^2}$:
+\[
+\mathbb{E}[X] = \int_0^\beta x \cdot \frac{2\beta - 2x}{\beta^2} \, dx.
+\]
+
+Expand and simplify:
+\[
+\mathbb{E}[X] = \frac{1}{\beta^2} \int_0^\beta \big(2\beta x - 2x^2\big) \, dx.
+\]
+
+Split the integral:
+\[
+\mathbb{E}[X] = \frac{1}{\beta^2} \left[ 2\beta \int_0^\beta x \, dx - 2 \int_0^\beta x^2 \, dx \right].
+\]
+
+Compute each term:
+1. For $\int_0^\beta x \, dx$:
+\[
+\int_0^\beta x \, dx = \left[ \frac{x^2}{2} \right]_0^\beta = \frac{\beta^2}{2}.
+\]
+
+2. For $\int_0^\beta x^2 \, dx$:
+\[
+\int_0^\beta x^2 \, dx = \left[ \frac{x^3}{3} \right]_0^\beta = \frac{\beta^3}{3}.
+\]
+
+Substitute back:
+\[
+\mathbb{E}[X] = \frac{1}{\beta^2} \left[ 2\beta \cdot \frac{\beta^2}{2} - 2 \cdot \frac{\beta^3}{3} \right].
+\]
+
+Simplify:
+\[
+\mathbb{E}[X] = \frac{1}{\beta^2} \left[ \beta^3 - \frac{2\beta^3}{3} \right].
+\]
+\[
+\mathbb{E}[X] = \frac{1}{\beta^2} \cdot \frac{\beta^3}{3} = \frac{\beta}{3}.
+\]
+
+\section*{Step 3: Method of Moments}
+Using the method of moments, equate $\mathbb{E}[X]$ to the sample mean $\bar{X}$:
+\[
+\frac{\beta}{3} = \bar{X}.
+\]
+
+Solve for $\beta$:
+\[
+\hat{\beta} = 3\bar{X}.
+\]
+
+\section*{Final Answer}
+The method of moments estimator for $\beta$ is:
+\[
+\hat{\beta} = 3\bar{X},
+\]
+where $\bar{X}$ is the sample mean:
+\[
+\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i.
+\]
+
+\section*{5.2.14}
+
+Let $X_1, \dots, X_n$ be a random sample recorded as heads or tails resulting from tossing a coin $n$ times with unknown probability $p$ of heads. 
+
+\begin{enumerate}
+    \item Find the MLE $\hat{p}$ of $p$.
+    \item Using the invariance property, obtain an MLE for $q = 1 - p$.
+\end{enumerate}
+
+How would you use the results you have obtained?
+
+\section*{Solution:}
+
+To find the Maximum Likelihood Estimator (MLE) for $p$ and use the invariance property to find the MLE for $q = 1 - p$, we proceed as follows:
+
+\subsection*{Step 1: Define the Likelihood Function}
+Each coin toss is modeled as a Bernoulli trial with probability $p$ of heads. Let $X_1, X_2, \dots, X_n$ represent the outcomes of $n$ independent tosses, where $X_i = 1$ for heads and $X_i = 0$ for tails. The probability mass function for each $X_i$ is:
+\[
+P(X_i = x_i) = p^{x_i}(1-p)^{1-x_i}, \quad x_i \in \{0, 1\}.
+\]
+
+The likelihood function for the entire sample is:
+\[
+L(p) = \prod_{i=1}^n p^{x_i}(1-p)^{1-x_i}.
+\]
+
+Simplify the product:
+\[
+L(p) = p^{\sum x_i}(1-p)^{n - \sum x_i}.
+\]
+
+Let $S = \sum_{i=1}^n X_i$, the total number of heads. The likelihood function becomes:
+\[
+L(p) = p^S(1-p)^{n-S}.
+\]
+
+\subsection*{Step 2: Log-Likelihood Function}
+Take the natural logarithm of the likelihood function:
+\[
+\ell(p) = \ln L(p) = S \ln p + (n-S) \ln(1-p).
+\]
+
+\subsection*{Step 3: Differentiate the Log-Likelihood}
+Differentiate $\ell(p)$ with respect to $p$:
+\[
+\frac{d\ell(p)}{dp} = \frac{S}{p} - \frac{n-S}{1-p}.
+\]
+
+Set the derivative to zero to find the critical point:
+\[
+\frac{S}{p} = \frac{n-S}{1-p}.
+\]
+
+Simplify:
+\[
+S(1-p) = (n-S)p.
+\]
+
+Solve for $p$:
+\[
+p = \frac{S}{n}.
+\]
+
+\subsection*{Step 4: Maximum Likelihood Estimator (MLE)}
+The MLE for $p$ is:
+\[
+\hat{p} = \frac{\sum_{i=1}^n X_i}{n}.
+\]
+
+\subsection*{Step 5: MLE for $q = 1 - p$}
+Using the invariance property of MLEs, the MLE for $q = 1 - p$ is:
+\[
+\hat{q} = 1 - \hat{p}.
+\]
+
+Substitute $\hat{p}$:
+\[
+\hat{q} = 1 - \frac{\sum_{i=1}^n X_i}{n}.
+\]
+
+\subsection*{Step 6: How to Use the Results}
+\begin{itemize}
+    \item \textbf{MLE for $p$:} Use $\hat{p}$ to estimate the probability of heads based on the observed data.
+    \item \textbf{MLE for $q$:} Use $\hat{q}$ to estimate the probability of tails based on the observed data.
+\end{itemize}
+
+The results can be applied to predict the likelihood of future outcomes for a similar coin or validate the fairness of the coin.
+
+\subsection*{Final Answer}
+\begin{enumerate}
+    \item The MLE for $p$ is:
+    \[
+    \hat{p} = \frac{\sum_{i=1}^n X_i}{n}.
+    \]
+    \item The MLE for $q = 1 - p$ is:
+    \[
+    \hat{q} = 1 - \frac{\sum_{i=1}^n X_i}{n}.
+    \]
+\end{enumerate}
+
+
+\section*{5.2.15}
+
+Let $X$ be a random variable representing the time between successive arrivals at a checkout counter in a supermarket. The values of $X$ in minutes (rounded to the nearest minute) are:
+\[
+1, \; 2, \; 3, \; 7, \; 11, \; 4, \; 13, \; 12, \; 7, \; 3, \; 2, \; 11, \; 7, \; 2.
+\]
+
+Assume that the PDF of $X$ is:
+\[
+f(x) = \frac{1}{\theta} e^{-x / \theta}, \quad x \geq 0.
+\]
+
+
+Use these data to find the Maximum Likelihood Estimator (MLE) $\hat{\theta}$.
+
+How can you use this estimate you have just derived?
+
+Also, find the method of moments estimate.
+
+
+\section*{Solution:}
+
+Let $X$ be a random variable representing the time between successive arrivals at a checkout counter. The PDF of $X$ is given by:
+\[
+f(x) = \frac{1}{\theta} e^{-x / \theta}, \quad x \geq 0.
+\]
+
+The observed data is:
+\[
+1, 2, 3, 7, 11, 4, 13, 12, 7, 3, 2, 11, 7, 2.
+\]
+
+\subsection*{Step 1: Maximum Likelihood Estimator (MLE)}
+
+\subsubsection*{Likelihood Function}
+For $n$ independent and identically distributed (i.i.d.) observations $X_1, X_2, \dots, X_n$, the likelihood function is:
+\[
+L(\theta) = \prod_{i=1}^n f(X_i) = \prod_{i=1}^n \frac{1}{\theta} e^{-X_i / \theta}.
+\]
+
+Simplify the product:
+\[
+L(\theta) = \frac{1}{\theta^n} \exp\left(-\frac{\sum_{i=1}^n X_i}{\theta}\right).
+\]
+
+\subsubsection*{Log-Likelihood Function}
+The log-likelihood function is:
+\[
+\ell(\theta) = \ln L(\theta) = -n \ln \theta - \frac{\sum_{i=1}^n X_i}{\theta}.
+\]
+
+\subsubsection*{Differentiation and Maximization}
+Differentiate $\ell(\theta)$ with respect to $\theta$:
+\[
+\frac{d\ell(\theta)}{d\theta} = -\frac{n}{\theta} + \frac{\sum_{i=1}^n X_i}{\theta^2}.
+\]
+
+Set $\frac{d\ell(\theta)}{d\theta} = 0$ to find the critical point:
+\[
+\frac{n}{\theta} = \frac{\sum_{i=1}^n X_i}{\theta^2}.
+\]
+
+Simplify:
+\[
+\theta = \frac{\sum_{i=1}^n X_i}{n}.
+\]
+
+Thus, the MLE for $\theta$ is:
+\[
+\hat{\theta}_{\text{MLE}} = \bar{X} = \frac{\sum_{i=1}^n X_i}{n}.
+\]
+
+\subsection*{Step 2: Method of Moments (MoM)}
+
+\subsubsection*{Theoretical Mean}
+For an exponential distribution, the theoretical mean is:
+\[
+\mathbb{E}[X] = \theta.
+\]
+
+\subsubsection*{Equating to the Sample Mean}
+The method of moments equates the theoretical mean to the sample mean:
+\[
+\mathbb{E}[X] = \bar{X}.
+\]
+
+Thus, the MoM estimator for $\theta$ is:
+\[
+\hat{\theta}_{\text{MoM}} = \bar{X}.
+\]
+
+\subsection*{Step 3: Compute $\hat{\theta}$ Using the Data}
+The given data is:
+\[
+1, 2, 3, 7, 11, 4, 13, 12, 7, 3, 2, 11, 7, 2.
+\]
+
+Compute the sample mean:
+\[
+\bar{X} = \frac{\sum_{i=1}^n X_i}{n}.
+\]
+
+The total sum is:
+\[
+\sum_{i=1}^{14} X_i = 84.
+\]
+
+Thus:
+\[
+\bar{X} = \frac{84}{14} = 6.
+\]
+
+\subsection*{Final Answer}
+\begin{enumerate}
+    \item The Maximum Likelihood Estimator (MLE) for $\theta$ is:
+    \[
+    \hat{\theta}_{\text{MLE}} = 6.
+    \]
+    \item The Method of Moments (MoM) estimator for $\theta$ is:
+    \[
+    \hat{\theta}_{\text{MoM}} = 6.
+    \]
+\end{enumerate}
+
+
+\section*{5.3.7}
+
+Let $X_1, \dots, X_n$ be a random sample from a $U(0, \theta)$ distribution. Let $Y_n = \max\{X_1, \dots, X_n\}$. We know (from Example 5.3.4) that $\hat{\theta}_1 = Y_n$ is an MLE of $\theta$.
+
+\begin{enumerate}
+    \item[(a)] Show that $\hat{\theta}_2 = 2\bar{X}$ is a method of moments estimator.
+    \item[(b)] Show that $\hat{\theta}_1$ is a biased estimator and $\hat{\theta}_2$ is an unbiased estimator of $\theta$.
+    \item[(c)] Show that $\hat{\theta}_3 = \frac{n+1}{n} \hat{\theta}_1$ is an unbiased estimator of $\theta$.
+\end{enumerate}
+
+\section*{Solution:}
+
+Let $X_1, \dots, X_n$ be a random sample from a $U(0, \theta)$ distribution. Let $Y_n = \max\{X_1, \dots, X_n\}$.
+
+\subsection*{Part (a): Show that $\hat{\theta}_2 = 2\bar{X}$ is a method of moments estimator}
+
+\begin{enumerate}
+    \item For a $U(0, \theta)$ distribution, the theoretical mean is:
+    \[
+    \mathbb{E}[X] = \frac{\theta}{2}.
+    \]
+
+    \item The sample mean $\bar{X}$ is given by:
+    \[
+    \bar{X} = \frac{1}{n} \sum_{i=1}^n X_i.
+    \]
+
+    \item Equating the theoretical mean $\mathbb{E}[X]$ to the sample mean $\bar{X}$:
+    \[
+    \frac{\theta}{2} = \bar{X}.
+    \]
+
+    Solving for $\theta$:
+    \[
+    \hat{\theta}_2 = 2\bar{X}.
+    \]
+
+    Hence, $\hat{\theta}_2 = 2\bar{X}$ is the method of moments estimator for $\theta$.
+\end{enumerate}
+
+\subsection*{Part (b): Show that $\hat{\theta}_1$ is a biased estimator and $\hat{\theta}_2$ is an unbiased estimator of $\theta$}
+
+\subsubsection*{Step 1: Bias of $\hat{\theta}_1 = Y_n$}
+
+\begin{itemize}
+    \item For $Y_n = \max\{X_1, X_2, \dots, X_n\}$, the expected value is:
+    \[
+    \mathbb{E}[Y_n] = \frac{n}{n+1} \theta.
+    \]
+
+    \item Since $\mathbb{E}[\hat{\theta}_1] = \mathbb{E}[Y_n] \neq \theta$, $\hat{\theta}_1$ is a biased estimator.
+\end{itemize}
+
+\subsubsection*{Step 2: Bias of $\hat{\theta}_2 = 2\bar{X}$}
+
+\begin{itemize}
+    \item The sample mean $\bar{X}$ has an expectation:
+    \[
+    \mathbb{E}[\bar{X}] = \frac{\theta}{2}.
+    \]
+
+    \item Substituting into $\hat{\theta}_2 = 2\bar{X}$:
+    \[
+    \mathbb{E}[\hat{\theta}_2] = 2 \mathbb{E}[\bar{X}] = 2 \cdot \frac{\theta}{2} = \theta.
+    \]
+
+    \item Since $\mathbb{E}[\hat{\theta}_2] = \theta$, $\hat{\theta}_2$ is an unbiased estimator.
+\end{itemize}
+
+\subsection*{Part (c): Show that $\hat{\theta}_3 = \frac{n+1}{n} \hat{\theta}_1$ is an unbiased estimator}
+
+\begin{enumerate}
+    \item Substitute $\hat{\theta}_1 = Y_n$ into $\hat{\theta}_3$:
+    \[
+    \hat{\theta}_3 = \frac{n+1}{n} Y_n.
+    \]
+
+    \item The expectation of $\hat{\theta}_3$ is:
+    \[
+    \mathbb{E}[\hat{\theta}_3] = \frac{n+1}{n} \mathbb{E}[Y_n].
+    \]
+
+    \item From part (b), $\mathbb{E}[Y_n] = \frac{n}{n+1} \theta$. Substituting this:
+    \[
+    \mathbb{E}[\hat{\theta}_3] = \frac{n+1}{n} \cdot \frac{n}{n+1} \theta = \theta.
+    \]
+
+    \item Since $\mathbb{E}[\hat{\theta}_3] = \theta$, $\hat{\theta}_3$ is an unbiased estimator of $\theta$.
+\end{enumerate}
+
+\subsection*{Final Results}
+\begin{enumerate}
+    \item[(a)] $\hat{\theta}_2 = 2\bar{X}$ is a method of moments estimator.
+    \item[(b)] $\hat{\theta}_1 = Y_n$ is a biased estimator, while $\hat{\theta}_2 = 2\bar{X}$ is an unbiased estimator.
+    \item[(c)] $\hat{\theta}_3 = \frac{n+1}{n} \hat{\theta}_1$ is an unbiased estimator of $\theta$.
+\end{enumerate}
+
+\section*{5.3.10}
+
+Let $X_1, \dots, X_{n_1}$ be a random sample from an $N(\mu_1, \sigma^2)$ distribution and let $Y_1, \dots, Y_{n_2}$ be a random sample from an $N(\mu_2, \sigma^2)$ distribution. 
+
+Show that the pooled estimator:
+\[
+\hat{\sigma}^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}
+\]
+is unbiased for $\sigma^2$, where $S_1^2$ and $S_2^2$ are the respective sample variances.
+
+
+\section*{Solution:}
+
+To show that the pooled estimator 
+\[
+\hat{\sigma}^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}
+\]
+is an unbiased estimator for $\sigma^2$, we proceed as follows:
+
+\subsection*{Step 1: Definitions}
+\begin{enumerate}
+    \item \textbf{Sample Variances:}
+    \begin{itemize}
+        \item For the sample $X_1, \dots, X_{n_1}$, the sample variance $S_1^2$ is defined as:
+        \[
+        S_1^2 = \frac{1}{n_1 - 1} \sum_{i=1}^{n_1} (X_i - \bar{X})^2.
+        \]
+        The expected value of $S_1^2$ is:
+        \[
+        \mathbb{E}[S_1^2] = \sigma^2.
+        \]
+        \item Similarly, for the sample $Y_1, \dots, Y_{n_2}$, the sample variance $S_2^2$ is defined as:
+        \[
+        S_2^2 = \frac{1}{n_2 - 1} \sum_{j=1}^{n_2} (Y_j - \bar{Y})^2.
+        \]
+        The expected value of $S_2^2$ is:
+        \[
+        \mathbb{E}[S_2^2] = \sigma^2.
+        \]
+    \end{itemize}
+
+    \item \textbf{Pooled Variance:} The pooled variance $\hat{\sigma}^2$ combines the variances of the two samples:
+    \[
+    \hat{\sigma}^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}.
+    \]
+\end{enumerate}
+
+\subsection*{Step 2: Expected Value of $\hat{\sigma}^2$}
+To show that $\hat{\sigma}^2$ is unbiased, we compute its expected value:
+\[
+\mathbb{E}[\hat{\sigma}^2] = \mathbb{E}\left[\frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}\right].
+\]
+
+Using the linearity of expectation:
+\[
+\mathbb{E}[\hat{\sigma}^2] = \frac{(n_1 - 1)\mathbb{E}[S_1^2] + (n_2 - 1)\mathbb{E}[S_2^2]}{n_1 + n_2 - 2}.
+\]
+
+Substitute $\mathbb{E}[S_1^2] = \sigma^2$ and $\mathbb{E}[S_2^2] = \sigma^2$:
+\[
+\mathbb{E}[\hat{\sigma}^2] = \frac{(n_1 - 1)\sigma^2 + (n_2 - 1)\sigma^2}{n_1 + n_2 - 2}.
+\]
+
+Factor out $\sigma^2$:
+\[
+\mathbb{E}[\hat{\sigma}^2] = \sigma^2 \cdot \frac{(n_1 - 1) + (n_2 - 1)}{n_1 + n_2 - 2}.
+\]
+
+Simplify the numerator:
+\[
+(n_1 - 1) + (n_2 - 1) = n_1 + n_2 - 2.
+\]
+
+Substitute back:
+\[
+\mathbb{E}[\hat{\sigma}^2] = \sigma^2 \cdot \frac{n_1 + n_2 - 2}{n_1 + n_2 - 2}.
+\]
+
+\[
+\mathbb{E}[\hat{\sigma}^2] = \sigma^2.
+\]
+
+\subsection*{Step 3: Conclusion}
+The expected value of $\hat{\sigma}^2$ is equal to $\sigma^2$. Thus, $\hat{\sigma}^2$ is an unbiased estimator of $\sigma^2$.
+
+\subsection*{Final Answer}
+The pooled estimator:
+\[
+\hat{\sigma}^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}
+\]
+is unbiased for $\sigma^2$.
+
+\section*{5.4.9}
+
+Let $X_1, \dots, X_n$ be a random sample from an $N(\mu, \sigma^2)$ distribution.
+
+\begin{enumerate}
+    \item[(a)] Construct a $(1 - \alpha)100\%$ confidence interval (CI) for $\mu$ when the value of $\sigma^2$ is known.
+    \item[(b)] Construct a $(1 - \alpha)100\%$ confidence interval (CI) for $\mu$ when the value of $\sigma^2$ is unknown.
+\end{enumerate}
+
+\section*{Solution:}
+
+Let $X_1, \dots, X_n$ be a random sample from an $N(\mu, \sigma^2)$ distribution. The goal is to construct a $(1 - \alpha)100\%$ confidence interval (CI) for $\mu$ in two cases.
+
+\subsection*{Case (a): When $\sigma^2$ is known}
+
+\subsubsection*{Step 1: Confidence Interval Formula}
+If the variance $\sigma^2$ is known, the sampling distribution of the sample mean $\bar{X}$ is:
+\[
+\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right).
+\]
+
+The $(1 - \alpha) \times 100\%$ confidence interval for $\mu$ is constructed using the standard normal distribution $Z \sim N(0, 1)$. The formula is:
+\[
+\bar{X} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}},
+\]
+where:
+\begin{itemize}
+    \item $\bar{X}$ is the sample mean,
+    \item $z_{\alpha/2}$ is the critical value from the standard normal distribution such that the area to the right of $z_{\alpha/2}$ is $\alpha/2$,
+    \item $\sigma$ is the known population standard deviation,
+    \item $n$ is the sample size.
+\end{itemize}
+
+\subsubsection*{Step 2: Confidence Interval}
+The $(1 - \alpha) \times 100\%$ confidence interval for $\mu$ is:
+\[
+\left( \bar{X} - z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}, \, \bar{X} + z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}} \right).
+\]
+
+\subsection*{Case (b): When $\sigma^2$ is unknown}
+
+\subsubsection*{Step 1: Use the $t$-Distribution}
+When $\sigma^2$ is unknown, we estimate it using the sample variance $S^2$. The sampling distribution of $\bar{X}$ is no longer standard normal but follows a $t$-distribution with $n-1$ degrees of freedom:
+\[
+\bar{X} \sim t_{n-1}.
+\]
+
+The $(1 - \alpha) \times 100\%$ confidence interval for $\mu$ is:
+\[
+\bar{X} \pm t_{\alpha/2, n-1} \cdot \frac{S}{\sqrt{n}},
+\]
+where:
+\begin{itemize}
+    \item $t_{\alpha/2, n-1}$ is the critical value from the $t$-distribution with $n-1$ degrees of freedom such that the area to the right of $t_{\alpha/2, n-1}$ is $\alpha/2$,
+    \item $S$ is the sample standard deviation:
+    \[
+    S = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})^2}.
+    \]
+\end{itemize}
+
+\subsubsection*{Step 2: Confidence Interval}
+The $(1 - \alpha) \times 100\%$ confidence interval for $\mu$ is:
+\[
+\left( \bar{X} - t_{\alpha/2, n-1} \cdot \frac{S}{\sqrt{n}}, \, \bar{X} + t_{\alpha/2, n-1} \cdot \frac{S}{\sqrt{n}} \right).
+\]
+
+\subsection*{Key Differences}
+\begin{enumerate}
+    \item When $\sigma^2$ is known, the standard normal distribution ($z$-values) is used.
+    \item When $\sigma^2$ is unknown, the $t$-distribution ($t$-values) with $n-1$ degrees of freedom is used.
+\end{enumerate}
+
+\section*{5.5.4}
+
+Let the observed mean of a sample of size 45 be $\bar{x} = 68.51$ from a distribution having variance 110. Find a 95\% confidence interval (CI) for the true mean $\mu$ and interpret the result and state any assumptions you have made.
+
+
+\section*{Solution:}
+
+We are given the following:
+\begin{itemize}
+    \item Sample size: \(n = 45\),
+    \item Sample mean: \(\bar{x} = 68.51\),
+    \item Population variance: \(\sigma^2 = 110\), so \(\sigma = \sqrt{110} \approx 10.488\),
+    \item Confidence level: \(95\%\).
+\end{itemize}
+
+\subsection*{Step 1: Confidence Interval Formula}
+When the population variance (\(\sigma^2\)) is known, the confidence interval for the population mean \(\mu\) is given by:
+\[
+\text{CI} = \bar{x} \pm z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}},
+\]
+where:
+\begin{itemize}
+    \item \(z_{\alpha/2}\) is the critical value from the standard normal distribution for a confidence level of \(95\%\) (i.e., \(\alpha = 0.05\)),
+    \item \(\sigma\) is the population standard deviation,
+    \item \(n\) is the sample size.
+\end{itemize}
+
+For \(95\%\) confidence, \(\alpha = 0.05\) and \(z_{\alpha/2} \approx 1.96\).
+
+\subsection*{Step 2: Calculate the Margin of Error}
+The margin of error (ME) is calculated as:
+\[
+\text{ME} = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}.
+\]
+
+Substituting the given values:
+\[
+\text{ME} = 1.96 \cdot \frac{10.488}{\sqrt{45}}.
+\]
+
+First, compute \(\sqrt{45} \approx 6.708\). Then:
+\[
+\text{ME} = 1.96 \cdot \frac{10.488}{6.708} \approx 1.96 \cdot 1.563 \approx 3.064.
+\]
+
+\subsection*{Step 3: Confidence Interval}
+The confidence interval is:
+\[
+\text{CI} = \bar{x} \pm \text{ME}.
+\]
+
+Substituting \(\bar{x} = 68.51\) and \(\text{ME} = 3.064\):
+\[
+\text{CI} = 68.51 \pm 3.064.
+\]
+
+This gives:
+\[
+\text{Lower Bound} = 68.51 - 3.064 = 65.446,
+\]
+\[
+\text{Upper Bound} = 68.51 + 3.064 = 71.574.
+\]
+
+Thus, the 95\% confidence interval is:
+\[
+\text{CI} = (65.45, 71.57).
+\]
+
+\subsection*{Step 4: Interpretation}
+We are 95\% confident that the true population mean \(\mu\) lies within the interval \((65.45, 71.57)\).
+
+\subsection*{Step 5: Assumptions}
+The following assumptions are made:
+\begin{itemize}
+    \item The sample is random and representative of the population.
+    \item The population is normally distributed, or the sample size (\(n = 45\)) is large enough for the Central Limit Theorem to apply.
+    \item The population variance (\(\sigma^2\)) is known.
+\end{itemize}
+
+\section*{5.5.13}
+
+Let $\bar{X}$ be the mean of a random sample of size $n$ from an $N(\mu, 16)$ distribution. Find $n$ such that:
+\[
+P(\bar{X} - 2 < \mu < \bar{X} + 2) = 0.95.
+\]
+
+\section*{Solution:}
+
+
+We are tasked with finding the sample size \(n\) such that the confidence interval 
+\[
+P(\bar{X} - 2 < \mu < \bar{X} + 2) = 0.95,
+\]
+where \(\bar{X}\) is the sample mean from an \(N(\mu, 16)\) distribution.
+
+\subsection*{Step 1: Sampling Distribution of \(\bar{X}\)}
+The sampling distribution of \(\bar{X}\) is:
+\[
+\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right),
+\]
+where \(\sigma^2 = 16\) is the population variance. The standard deviation of \(\bar{X}\) is:
+\[
+\text{Standard Deviation of } \bar{X} = \frac{\sigma}{\sqrt{n}} = \frac{4}{\sqrt{n}}.
+\]
+
+\subsection*{Step 2: Confidence Interval Relation}
+For a \(95\%\) confidence level, the critical \(z\)-value is:
+\[
+z_{\alpha/2} = 1.96.
+\]
+
+The margin of error for the confidence interval is given by:
+\[
+\text{Margin of Error} = z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}.
+\]
+
+Substituting the margin of error as 2:
+\[
+2 = 1.96 \cdot \frac{4}{\sqrt{n}}.
+\]
+
+\subsection*{Step 3: Solve for \(n\)}
+Rearranging the equation to solve for \(n\):
+\[
+\sqrt{n} = \frac{1.96 \cdot 4}{2},
+\]
+\[
+\sqrt{n} = 3.92.
+\]
+
+Squaring both sides:
+\[
+n = 3.92^2 = 15.3664.
+\]
+
+Since \(n\) must be an integer, round up to the next whole number:
+\[
+n = 16.
+\]
+
+\subsection*{Final Answer}
+The required sample size is:
+\[
+\boxed{n = 16}.
+\]
+
+\subsection*{Interpretation}
+With a sample size of \(n = 16\), the sampling distribution of \(\bar{X}\) will have a small enough standard deviation such that the confidence interval \((\bar{X} - 2, \bar{X} + 2)\) has a \(95\%\) probability of containing the true population mean \(\mu\).
+
+
+\section*{5.5.28}
+
+In a large university, the following are the ages of 20 randomly chosen employees:
+\[
+24, \, 31, \, 28, \, 43, \, 28, \, 56, \, 48, \, 39, \, 52, \, 32,
+\]
+\[
+38, \, 49, \, 51, \, 49, \, 62, \, 33, \, 41, \, 58, \, 63, \, 56.
+\]
+
+Assuming that the data came from a normal population, construct a 95\% confidence interval (CI) for the population mean \(\mu\) of the ages of the employees of this university. Interpret your answer.
+
+\section*{Solution:}
+
+We are tasked with constructing a 95\% confidence interval (CI) for the population mean \(\mu\) based on the following data:
+\[
+24, 31, 28, 43, 28, 56, 48, 39, 52, 32, 38, 49, 51, 49, 62, 33, 41, 58, 63, 56.
+\]
+
+\subsection*{Step 1: Information given}
+\begin{itemize}
+    \item Sample size: \(n = 20\),
+    \item Confidence level: \(95\%\) (\(\alpha = 0.05\)).
+\end{itemize}
+
+\subsection*{Step 2: Sample Mean and Sample Standard Deviation}
+\textbf{Sample Mean (\(\bar{x}\))}: The sample mean is calculated as:
+\[
+\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}.
+\]
+
+Summing the data:
+\[
+\sum_{i=1}^{n} x_i = 24 + 31 + 28 + \dots + 56 = 884.
+\]
+
+Thus:
+\[
+\bar{x} = \frac{884}{20} = 44.2.
+\]
+
+\textbf{Sample Standard Deviation (\(s\))}: The sample standard deviation is calculated as:
+\[
+s = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}}.
+\]
+
+After computation (subtracting \(\bar{x} = 44.2\), squaring deviations, summing, and dividing by \(n-1 = 19\)):
+\[
+s \approx 12.15.
+\]
+
+\subsection*{Step 3: Confidence Interval Formula}
+When the population standard deviation is unknown, the confidence interval is given by:
+\[
+\text{CI} = \bar{x} \pm t_{\alpha/2, \, n-1} \cdot \frac{s}{\sqrt{n}}.
+\]
+
+Where:
+\begin{itemize}
+    \item \(t_{\alpha/2, \, n-1} = t_{0.025, 19} \approx 2.093\) (from the \(t\)-table),
+    \item \(s \approx 12.15\),
+    \item \(n = 20\).
+\end{itemize}
+
+Substitute these values:
+\[
+\text{Margin of Error (ME)} = t_{\alpha/2, \, n-1} \cdot \frac{s}{\sqrt{n}} = 2.093 \cdot \frac{12.15}{\sqrt{20}}.
+\]
+
+First, calculate \(\sqrt{20} \approx 4.472\), then:
+\[
+\text{ME} = 2.093 \cdot \frac{12.15}{4.472} \approx 2.093 \cdot 2.716 \approx 5.69.
+\]
+
+\subsection*{Step 4: Compute the Confidence Interval}
+The confidence interval is:
+\[
+\text{CI} = \bar{x} \pm \text{ME}.
+\]
+
+Substituting \(\bar{x} = 44.2\) and \(\text{ME} = 5.69\):
+\[
+\text{Lower Bound} = 44.2 - 5.69 = 38.51,
+\]
+\[
+\text{Upper Bound} = 44.2 + 5.69 = 49.89.
+\]
+
+Thus, the 95\% confidence interval is:
+\[
+\text{CI} = (38.51, 49.89).
+\]
+
+\subsection*{Step 5: Interpretation}
+We are 95\% confident that the true mean age \(\mu\) of the employees in the university lies between \(38.51\) and \(49.89\).
+
+\subsection*{Assumptions}
+\begin{itemize}
+    \item The data is randomly selected and representative of the population.
+    \item The data follows a normal distribution (or the Central Limit Theorem applies due to a reasonable sample size).
+\end{itemize}
+
+\section*{5.6.4}
+
+
+A random sample of 25 observations gave the following summary statistics:
+\[
+\sum x_i = 234 \quad \text{and} \quad \sum x_i^2 = 3048.
+\]
+
+Assuming that the data can be looked upon as a random sample from a normal population, construct a 95\% confidence interval (CI) for the actual variance, \(\sigma^2\).
+
+\section*{Solution:}
+
+We are tasked with constructing a 95\% confidence interval (CI) for the population variance \(\sigma^2\) based on the given data:
+\[
+\sum x_i = 234 \quad \text{and} \quad \sum x_i^2 = 3048, \quad \text{with sample size } n = 25.
+\]
+
+\subsection*{Step 1: Compute the sample variance \(s^2\)}
+The formula for the sample variance is:
+\[
+s^2 = \frac{1}{n-1} \left( \sum x_i^2 - \frac{(\sum x_i)^2}{n} \right).
+\]
+
+Substituting the given values:
+\[
+s^2 = \frac{1}{25-1} \left( 3048 - \frac{(234)^2}{25} \right).
+\]
+
+First, calculate \(\frac{(234)^2}{25}\):
+\[
+\frac{234^2}{25} = \frac{54756}{25} = 2190.24.
+\]
+
+Now calculate:
+\[
+3048 - 2190.24 = 857.76.
+\]
+
+Thus:
+\[
+s^2 = \frac{857.76}{24} \approx 35.74.
+\]
+
+\subsection*{Step 2: Confidence interval formula}
+The confidence interval for the population variance \(\sigma^2\) is given by:
+\[
+\left( \frac{(n-1)s^2}{\chi^2_{1-\alpha/2}}, \frac{(n-1)s^2}{\chi^2_{\alpha/2}} \right),
+\]
+where:
+\begin{itemize}
+    \item \(n-1 = 24\),
+    \item \(\alpha = 0.05\) for a 95\% CI,
+    \item \(\chi^2_{1-\alpha/2} = \chi^2_{0.975, 24} \approx 39.36\) (from chi-squared table),
+    \item \(\chi^2_{\alpha/2} = \chi^2_{0.025, 24} \approx 12.40\).
+\end{itemize}
+
+\subsection*{Step 3: Calculate the bounds}
+The lower and upper bounds of the confidence interval are calculated as:
+\[
+\text{Lower Bound} = \frac{(n-1)s^2}{\chi^2_{1-\alpha/2}} = \frac{(24)(35.74)}{39.36} = \frac{857.76}{39.36} \approx 21.8.
+\]
+
+\[
+\text{Upper Bound} = \frac{(n-1)s^2}{\chi^2_{\alpha/2}} = \frac{(24)(35.74)}{12.40} = \frac{857.76}{12.40} \approx 69.2.
+\]
+
+\subsection*{Step 4: Final Confidence Interval}
+The 95\% confidence interval for the variance \(\sigma^2\) is:
+\[
+\text{CI} = (21.8, 69.2).
+\]
+
+\subsection*{Step 5: Interpretation}
+We are 95\% confident that the true population variance \(\sigma^2\) lies between \(21.8\) and \(69.2\).
+
+
+\section*{Project}
+
+\section*{5.10.9 Confidence intervals based on sampling distributions}
+
+If we want to obtain a \((1 - \alpha)100\%\) CI for \(\theta\), begin with an estimator \(\hat{\theta}\) of \(\theta\) and determine its sampling distribution. Now select two probability levels, \(\alpha_1\) and \(\alpha_2\), so that \(\alpha = \alpha_1 + \alpha_2\). Generally, we let \(\alpha_1 = \alpha_2\). Take a sample and calculate the value of \(\hat{\theta}\), say \(\hat{\theta} = k\). Now we need to determine the values of the upper and lower confidence limits. Find a value \(\theta_L\) such that:
+\[
+P(\hat{\theta} \geq k) = \alpha_1,
+\]
+and \(\theta_U\) such that:
+\[
+P(\hat{\theta} \leq k) = \alpha_2.
+\]
+
+Then a \((1 - \alpha)100\%\) CI for \(\theta\) will be:
+\[
+\theta_L < \theta < \theta_U.
+\]
+
+\subsection*{(a)}
+Let \(X_1, \ldots, X_n\) be a random sample from a \(U(0, \theta)\) distribution. Obtain a \((1 - \alpha)100\%\) CI for \(\theta\) using the method of sampling distribution.
+
+\subsection*{(b)}
+Let \(X\) have a binomial distribution with parameters \(n\) and \(p\). First, show that there is no quantity that satisfies the conditions of a pivotal quantity. Then, using the method of sampling distributions, obtain a \((1 - \alpha)100\%\) CI for \(p\).
+
+
+\section*{Solution:}
+
+
+\section*{Confidence Intervals Based on Sampling Distributions}
+
+\subsection*{Problem Statement}
+(a) Let \( X_1, X_2, \ldots, X_n \) be a random sample from a \( U(0, \theta) \) distribution. Obtain a \((1-\alpha)100\%\) confidence interval (CI) for \(\theta\) using the method of sampling distribution.
+
+(b) Let \( X \) have a binomial distribution with parameters \( n \) and \( p \). First, show that there is no quantity that satisfies the conditions of a pivotal quantity. Then, using the method of sampling distributions, obtain a \((1-\alpha)100\%\) CI for \( p \).
+
+\subsection*{Solution}
+
+\subsubsection*{Part (a): Confidence Interval for \(\theta\) in \( U(0, \theta) \)}
+
+\paragraph{Step 1: Distribution of \( Y_n \)}
+Let \( Y_n = \max(X_1, X_2, \ldots, X_n) \). The cumulative distribution function (CDF) of \( Y_n \) is given by:
+\[
+F_{Y_n}(y) = P(Y_n \leq y) = P(X_1 \leq y, X_2 \leq y, \ldots, X_n \leq y).
+\]
+Since \( X_i \sim U(0, \theta) \) are independent and identically distributed (i.i.d.):
+\[
+F_{Y_n}(y) = \left(P(X_1 \leq y)\right)^n = \left(\frac{y}{\theta}\right)^n, \quad \text{for } 0 \leq y \leq \theta.
+\]
+The probability density function (PDF) is obtained by differentiating \( F_{Y_n}(y) \):
+\[
+f_{Y_n}(y) = \frac{d}{dy}F_{Y_n}(y) = \frac{n y^{n-1}}{\theta^n}, \quad 0 \leq y \leq \theta.
+\]
+
+\paragraph{Step 2: Confidence Interval for \(\theta\)}
+Using the sampling distribution of \( Y_n \), we derive a \((1-\alpha)100\%\) confidence interval. Define:
+\[
+P\left(\frac{Y_n}{\theta} \leq k\right) = 1-\alpha, \quad \text{where } k = (1-\alpha)^{1/n}.
+\]
+Rewriting this in terms of \(\theta\):
+\[
+\theta \geq \frac{Y_n}{k}, \quad \text{or equivalently,} \quad \theta \geq \frac{Y_n}{(1-\alpha)^{1/n}}.
+\]
+Thus, the confidence interval is:
+\[
+\theta \in \left[\frac{Y_n}{(1-\alpha)^{1/n}}, \infty \right).
+\]
+
+\subsubsection*{Part (b): Confidence Interval for \(p\) in Binomial Distribution}
+
+\paragraph{Step 1: Sampling Distribution of \(\hat{p}\)}
+Let \( X \sim \text{Binomial}(n, p) \), where the sample proportion is \( \hat{p} = \frac{X}{n} \). For large \(n\), the sampling distribution of \(\hat{p}\) is approximately normal:
+\[
+\hat{p} \sim N\left(p, \frac{p(1-p)}{n}\right).
+\]
+
+\paragraph{Step 2: Confidence Interval}
+Using the pivotal quantity:
+\[
+Z = \frac{\hat{p} - p}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}},
+\]
+where \( Z \sim N(0, 1) \), the \((1-\alpha)100\%\) confidence interval is derived as:
+\[
+P\left(-Z_{\alpha/2} \leq \frac{\hat{p} - p}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}} \leq Z_{\alpha/2}\right) = 1-\alpha.
+\]
+Simplifying:
+\[
+\hat{p} - Z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \leq p \leq \hat{p} + Z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}.
+\]
+
+\paragraph{Final Confidence Interval for \(p\):}
+\[
+p \in \left[\hat{p} - Z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + Z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right].
+\]
+
+\end{document}
