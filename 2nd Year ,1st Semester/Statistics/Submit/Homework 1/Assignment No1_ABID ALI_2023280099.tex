@@ -1,0 +1,358 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float} % Add the float package
+
+\title{Mathematical Statistics Assignment 1}
+\author{ABID ALI (Student ID: 2023280099)}
+\date{October 20, 2024}
+
+\begin{document}
+
+\maketitle
+
+\newpage % Forces the following content to appear on a new page
+
+\section*{1.4.3}
+
+The data in Table 1.9 are presented to illustrate the role of renewable energy consumption in the U.S. energy supply in 2007 (source: \texttt{http://www.eia.doe.gov/fuelrenewable.html}). Renewable energy consists of biomass, geothermal energy, hydroelectric energy, solar energy, and wind energy.
+
+\begin{itemize}
+    \item[(a)] Construct a bar graph.
+    \item[(b)] Construct a Pareto chart.
+    \item[(c)] Construct a pie chart.
+\end{itemize}
+
+% Table 1.9 Image placed below the Pareto chart
+\begin{figure}[H] % The H option forces the figure to be placed exactly here
+\centering
+% Replace this with the correct path to your Table 1.9 image file
+\includegraphics[width=0.6\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/143.png}
+\caption{Table 1.9: Renewable Energy Consumption}
+\end{figure}
+
+\section*{Solution:}
+
+(a) Bar graph
+\begin{figure}[H] % Use the H option to force it to stay here
+\centering
+% Replace this with the correct path to your bar graph image file
+\includegraphics[width=0.8\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/bar.png}
+\caption{Bar Graph of Energy Consumption}
+\end{figure}
+
+(b) Pareto chart
+\begin{figure}[H] % Use the H option here as well
+\centering
+% Replace this with the correct path to your Pareto chart image file
+\includegraphics[width=0.8\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/pareto.png}
+\caption{Pareto Chart}
+\end{figure}
+
+(c) Pie chart
+\begin{figure}[H] % Use the H option here as well
+\centering
+% Replace this with the correct path to your pie chart image file
+\includegraphics[width=0.8\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/pie.png}
+\caption{Pie Chart}
+\end{figure}
+
+\section*{1.4.14}
+The following table gives radon concentrations in pCi/liter (picocurie per liter) obtained from 40 houses in a certain area.
+
+\begin{figure}[H] % The H option forces the figure to be placed exactly here
+\centering
+% Replace this with the correct path to your Table 1.9 image file
+\includegraphics[width=0.8\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/1414.png}
+\end{figure}
+
+\begin{itemize}
+    \item[(a)] Construct a stem-and-leaf display.
+    \item[(b)] Construct a frequency histogram and interpret.
+    \item[(c)] Construct a pie chart and interpret.
+\end{itemize}
+
+\section*{Solution:}
+(a) Stem and leaf
+\begin{figure}[H] % The H option forces the figure to be placed exactly here
+\centering
+\begin{minipage}{\textwidth} % Use minipage to ensure the figures stay on the same page
+    \centering
+    % Replace this with the correct path to your first stem-and-leaf image file
+    \includegraphics[width=0.8\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/stem_leaf.png}
+    \includegraphics[width=0.8\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/stem_leaf1.png}
+\end{minipage}
+\end{figure}
+\newpage
+(b) Histogram and Interpret
+\begin{figure}[H] % Use the H option to force it to stay here
+\centering
+% Replace this with the correct path to your bar graph image file
+\includegraphics[width=0.7\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/1414_histogram.png}
+\caption{Bar Graph of Energy Consumption}
+\end{figure}
+(c) Pie chart and Interpret
+\begin{figure}[H] % Use the H option to force it to stay here
+\centering
+% Replace this with the correct path to your bar graph image file
+\includegraphics[width=0.7\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/1414_pie.png}
+\end{figure}
+
+\section*{1.5.5}
+Maximal static inspiratory pressure (PI\textsubscript{max}) is an index of respiratory muscle strength. The following data show the measure of PI\textsubscript{max} (cm H\textsubscript{2}O) for 15 cystic fibrosis patients.
+
+\begin{figure}[H] % Use the H option to force it to stay here
+\centering
+% Replace this with the correct path to your bar graph image file
+\includegraphics[width=0.8\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/155.png}
+\end{figure}
+
+\begin{itemize}
+    \item[(a)] Find the lower and upper quartiles, median, and interquartile range. Check for any outliers and interpret.
+    \item[(b)] Construct a box plot and interpret.
+    \item[(c)] Are there any outliers?
+\end{itemize}
+\section*{Solution:}
+
+\begin{enumerate}
+    \item[(a)] \textbf{Solution:}
+    \begin{itemize}
+        \item Lower Quartile (Q1) = 80
+        \item Median (Q2) = 95
+        \item Upper Quartile (Q3) = 115
+        \item Interquartile Range (IQR) = Q3 - Q1 = 115 - 80 = 35
+        \item Outlier Boundaries: 
+        \[
+        \text{Lower Bound} = Q1 - 1.5 \times IQR = 80 - 1.5 \times 35 = 27.5
+        \]
+        \[
+        \text{Upper Bound} = Q3 + 1.5 \times IQR = 115 + 1.5 \times 35 = 167.5
+        \]
+        Since all data points fall between 27.5 and 167.5, \textbf{there are no outliers}.
+    \end{itemize}
+
+    \item[(b)] \textbf{Box Plot:}
+    \begin{center}
+    \includegraphics[width=0.5\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/box.png}.
+    \end{center}
+
+    \item[(c)] \textbf{Outliers:}
+    Based on the lower and upper bounds for outliers (27.5 and 167.5), there are no outliers in this dataset.
+\end{enumerate}
+
+\section*{1.5.7}
+
+\noindent (a) For any grouped data with $l$ classes with group frequencies $f_i$ and class midpoints $m_i$, show that
+\[
+\sum_{i=1}^{l} f_i(m_i - \bar{x}) = 0.
+\]
+
+\noindent (b) Verify this result for the data given in \textit{Exercise 1.5.6}.
+
+\begin{figure}[H] % Use the H option to force it to stay here
+\centering
+% Replace this with the correct path to your bar graph image file
+\includegraphics[width=0.7\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/156.png}
+\caption{Exercise 1.5.6-TABLE 1.21 Class and Frequency.}
+\end{figure}
+
+\section*{Solution:}
+
+\textbf{Solution:}
+
+\textbf{(a)} For any grouped data with \( l \) classes and group frequencies \( f_i \) and class midpoints \( m_i \), we need to show that:
+
+\[
+\sum_{i=1}^{l} f_i (m_i - \bar{x}) = 0.
+\]
+
+The formula for the mean \( \bar{x} \) of grouped data is given by:
+
+\[
+\bar{x} = \frac{\sum_{i=1}^{l} f_i m_i}{\sum_{i=1}^{l} f_i}.
+\]
+
+We begin by expanding the left-hand side:
+
+\[
+\sum_{i=1}^{l} f_i (m_i - \bar{x}) = \sum_{i=1}^{l} f_i m_i - \sum_{i=1}^{l} f_i \bar{x}.
+\]
+
+Since \( \bar{x} \) is a constant, we can factor it out from the summation:
+
+\[
+\sum_{i=1}^{l} f_i \bar{x} = \bar{x} \sum_{i=1}^{l} f_i.
+\]
+
+Now substitute the expression for \( \bar{x} \):
+
+\[
+\bar{x} = \frac{\sum_{i=1}^{l} f_i m_i}{\sum_{i=1}^{l} f_i}.
+\]
+
+Thus:
+
+\[
+\sum_{i=1}^{l} f_i \bar{x} = \frac{\sum_{i=1}^{l} f_i m_i}{\sum_{i=1}^{l} f_i} \cdot \sum_{i=1}^{l} f_i = \sum_{i=1}^{l} f_i m_i.
+\]
+
+Now substitute back into the original equation:
+
+\[
+\sum_{i=1}^{l} f_i (m_i - \bar{x}) = \sum_{i=1}^{l} f_i m_i - \sum_{i=1}^{l} f_i m_i = 0.
+\]
+
+Thus, we have shown that:
+
+\[
+\sum_{i=1}^{l} f_i (m_i - \bar{x}) = 0.
+\]
+
+\textbf{(b)} Verify the result for the data in Exercise 1.5.6.
+
+The data provided in Exercise 1.5.6 is:
+
+\[
+\begin{array}{|c|c|}
+\hline
+\text{Class} & \text{Frequency} \\
+\hline
+0-4 & 5 \\
+5-9 & 14 \\
+10-14 & 15 \\
+15-19 & 10 \\
+20-24 & 6 \\
+\hline
+\end{array}
+\]
+
+First, calculate the midpoints \( m_i \) for each class:
+
+\[
+m_1 = \frac{0+4}{2} = 2, \quad m_2 = \frac{5+9}{2} = 7, \quad m_3 = \frac{10+14}{2} = 12,
+\]
+\[
+m_4 = \frac{15+19}{2} = 17, \quad m_5 = \frac{20+24}{2} = 22.
+\]
+
+Next, calculate the mean \( \bar{x} \) of the data:
+
+\[
+\bar{x} = \frac{\sum_{i=1}^{5} f_i m_i}{\sum_{i=1}^{5} f_i} = \frac{5(2) + 14(7) + 15(12) + 10(17) + 6(22)}{5 + 14 + 15 + 10 + 6}.
+\]
+
+First, compute the numerator:
+
+\[
+5(2) + 14(7) + 15(12) + 10(17) + 6(22) = 10 + 98 + 180 + 170 + 132 = 590.
+\]
+
+Now, compute the denominator:
+
+\[
+5 + 14 + 15 + 10 + 6 = 50.
+\]
+
+Thus, the mean \( \bar{x} \) is:
+
+\[
+\bar{x} = \frac{590}{50} = 11.8.
+\]
+
+Now, verify the result \( \sum_{i=1}^{5} f_i (m_i - \bar{x}) = 0 \) by calculating each term:
+
+\[
+f_1(m_1 - \bar{x}) = 5(2 - 11.8) = 5(-9.8) = -49,
+\]
+\[
+f_2(m_2 - \bar{x}) = 14(7 - 11.8) = 14(-4.8) = -67.2,
+\]
+\[
+f_3(m_3 - \bar{x}) = 15(12 - 11.8) = 15(0.2) = 3,
+\]
+\[
+f_4(m_4 - \bar{x}) = 10(17 - 11.8) = 10(5.2) = 52,
+\]
+\[
+f_5(m_5 - \bar{x}) = 6(22 - 11.8) = 6(10.2) = 61.2.
+\]
+
+Summing these values:
+
+\[
+-49 - 67.2 + 3 + 52 + 61.2 = 0.
+\]
+
+Thus, we have verified that:
+
+\[
+\sum_{i=1}^{5} f_i (m_i - \bar{x}) = 0.
+\]
+
+
+\section*{1.5.10}
+The radon concentration (in pCi/liter) data obtained from 40 houses in a certain area are given below.
+\begin{figure}[H] % Use the H option to force it to stay here
+\centering
+% Replace this with the correct path to your bar graph image file
+\includegraphics[width=0.8\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/1510.png}
+\end{figure}
+
+\begin{enumerate}
+    \item[(a)] Find the mean, variance, and range for these data and interpret.
+    
+    \item[(b)] Find lower and upper quartiles, median, and interquartile range. Check for any outliers.
+    
+    \item[(c)] Construct a box plot and interpret.
+    
+    \item[(d)] Construct a histogram.
+    
+    \item[(e)] Locate on your histogram $\bar{x}$, $\bar{x} \pm s$, $\bar{x} \pm 2s$, and $\bar{x} \pm 3s$. Count the data points in each of the intervals $\bar{x} \pm s$, $\bar{x} \pm 2s$, and $\bar{x} \pm 3s$ and compare this with the empirical rule.
+    
+\end{enumerate}
+
+\section*{Solution:}
+
+\begin{enumerate}
+    \item[(a)] \textbf{Mean, Variance, and Range}
+    \begin{itemize}
+        \item Mean: $\bar{x} = 7.66$ pCi/L
+        \item Variance: $\sigma^2 = 24.39$
+        \item Range: $16.7$ pCi/L
+    \end{itemize}
+    
+    \item[(b)] \textbf{Quartiles, Median, and Interquartile Range (IQR)}
+    \begin{itemize}
+        \item Lower Quartile (Q1): 6.65
+        \item Median: 7.6
+        \item Upper Quartile (Q3): 11.125
+        \item Interquartile Range (IQR): $Q3 - Q1 = 4.475$
+        \item Outliers: No outliers were detected.
+    \end{itemize}
+
+    \item[(c)] \textbf{Box Plot:}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/1510_box.png} % Replace with the path to your box plot image
+    \end{center}
+    
+    \item[(d)] \textbf{Histogram:}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 1/figs/1510_histogram.png} % Replace with the path to your histogram image
+    \end{center}
+
+    \item[(e)] \textbf{Empirical Rule Intervals}
+    \begin{itemize}
+        \item Mean $\pm$ 1 standard deviation: (2.73, 12.60) — 22 data points
+        \item Mean $\pm$ 2 standard deviations: (-2.21, 17.54) — 34 data points
+        \item Mean $\pm$ 3 standard deviations: (-7.15, 22.48) — 34 data points
+    \end{itemize}
+    According to the empirical rule:
+    \begin{itemize}
+        \item Approximately 68\% (22 data points) lie within 1 standard deviation.
+        \item Approximately 95\% (34 data points) lie within 2 standard deviations.
+        \item Approximately 99.7\% (34 data points) lie within 3 standard deviations.
+    \end{itemize}
+
+\end{enumerate}
+\end{document}
