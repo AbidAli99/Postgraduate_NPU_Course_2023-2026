@@ -1,0 +1,879 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float} % Add the float package
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{array}
+
+\title{Mathematical Statistics Assignment 4}
+\author{ABID ALI (Student ID: 2023280099)}
+\date{November 23, 2024}
+
+\begin{document}
+
+\maketitle
+
+\newpage % Forces the following content to appear on a new page
+
+\section*{4.1.3}
+
+Let the population be given by $\{1, 2, 3\}$. Let $P(x) = \frac{1}{3}$ for $x = 1, 2, 3$. Take samples of size 3 with replacement.
+
+\begin{enumerate}
+    \item[(a)] Calculate $\mu$ and $\sigma^2$.
+    \item[(b)] Obtain the sampling distribution of the sample mean.
+    \item[(c)] Obtain the mean and variance of the sample mean.
+\end{enumerate}
+
+\section*{Solution:}
+
+
+\subsection*{(a) Calculate $\mu$ and $\sigma^2$}
+
+The population is $\{1, 2, 3\}$ with $P(x) = \frac{1}{3}$ for $x = 1, 2, 3$.
+
+\textbf{Step 1: Calculate the population mean ($\mu$)}  
+The population mean is given by:
+\[
+\mu = \frac{1}{N} \sum_{i=1}^N x_i
+\]
+where $x_i$ are the population values and $N = 3$. Substituting the values:
+\[
+\mu = \frac{1}{3} (1 + 2 + 3) = \frac{6}{3} = 2
+\]
+
+\textbf{Step 2: Calculate the population variance ($\sigma^2$)}  
+The population variance is:
+\[
+\sigma^2 = \frac{1}{N} \sum_{i=1}^N (x_i - \mu)^2
+\]
+Substitute $\mu = 2$ and $x_i = \{1, 2, 3\}$:
+\[
+\sigma^2 = \frac{1}{3} \left[(1 - 2)^2 + (2 - 2)^2 + (3 - 2)^2 \right]
+\]
+\[
+\sigma^2 = \frac{1}{3} \left[1^2 + 0^2 + 1^2\right] = \frac{1}{3} (1 + 0 + 1) = \frac{2}{3}
+\]
+
+Thus, 
+\[
+\mu = 2, \quad \sigma^2 = \frac{2}{3}.
+\]
+
+\subsection*{(b) Sampling distribution of the sample mean}
+
+\textbf{Step 1: Generate all possible samples of size 3}  
+Since sampling is with replacement, the total number of samples is $3^3 = 27$. The samples are:
+\[
+\{(1,1,1), (1,1,2), (1,1,3), (1,2,1), \dots, (3,3,3)\}.
+\]
+
+\textbf{Step 2: Calculate the sample mean for each sample}  
+The sample mean for a sample $(x_1, x_2, x_3)$ is:
+\[
+\bar{x} = \frac{x_1 + x_2 + x_3}{3}.
+\]
+
+For example:
+- For $(1, 1, 1)$, $\bar{x} = \frac{1 + 1 + 1}{3} = 1$,
+- For $(1, 1, 2)$, $\bar{x} = \frac{1 + 1 + 2}{3} = 1.33$,
+- For $(1, 1, 3)$, $\bar{x} = \frac{1 + 1 + 3}{3} = 1.67$.
+
+Continue similarly for all 27 samples.
+
+\textbf{Step 3: Tabulate the sampling distribution}  
+Count the frequency of each unique sample mean and calculate their probabilities.
+
+\[
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+\textbf{Sample} & \bar{X} & \textbf{Sample} & \bar{X} & \textbf{Sample} & \bar{X} \\ \hline
+(1,1,1) & 1 & (2,1,1) & 1\frac{1}{3} & (3,1,1) & 1\frac{1}{2} \\ \hline
+(1,1,2) & 1\frac{1}{3} & (2,1,2) & 1\frac{2}{3} & (3,1,2) & 2 \\ \hline
+(1,1,3) & 1\frac{2}{3} & (2,1,3) & 2 & (3,2,1) & 2 \\ \hline
+(1,2,1) & 1\frac{1}{3} & (2,2,1) & 2 & (3,2,2) & 2\frac{1}{3} \\ \hline
+(1,2,2) & 2 & (2,2,2) & 2 & (3,2,3) & 2\frac{2}{3} \\ \hline
+(1,2,3) & 2\frac{1}{3} & (2,3,1) & 2\frac{1}{3} & (3,3,1) & 2\frac{1}{3} \\ \hline
+(1,3,1) & 2 & (2,3,2) & 2\frac{2}{3} & (3,3,2) & 2\frac{2}{3} \\ \hline
+(1,3,3) & 2\frac{2}{3} & (2,3,3) & 3 & (3,3,3) & 3 \\ \hline
+\end{array}
+\]
+
+\[
+\begin{array}{|c|c|c|c|c|c|c|c|}
+\hline
+\bar{X} & 1 & 1\frac{1}{3} & 1\frac{2}{3} & 2 & 2\frac{1}{3} & 2\frac{2}{3} & 3 \\ \hline
+p(\bar{X}) & \frac{1}{27} & \frac{1}{9} & \frac{2}{9} & \frac{7}{27} & \frac{2}{9} & \frac{1}{9} & \frac{1}{27} \\ \hline
+\end{array}
+\]
+
+
+\subsection*{(c) Mean and variance of the sample mean}
+
+\textbf{Step 1: Mean of the sample mean}  
+The mean of the sampling distribution of the sample mean is:
+\[
+E(\bar{X}) = \mu = 2.
+\]
+
+\textbf{Step 2: Variance of the sample mean}  
+The variance of the sample mean is:
+\[
+\text{Var}(\bar{X}) = \frac{\sigma^2}{n}.
+\]
+Substitute $\sigma^2 = \frac{2}{3}$ and $n = 3$:
+\[
+\text{Var}(\bar{X}) = \frac{\frac{2}{3}}{3} = \frac{2}{9}.
+\]
+
+Thus, 
+\[
+E(\bar{X}) = 2, \quad \text{Var}(\bar{X}) = \frac{2}{9}.
+\]
+
+\section*{4.1.9}
+
+The distribution of heights of all students in a large university has a normal distribution with a mean of 66 in. and a standard deviation of 2 in. What is the probability that the mean height of 26 randomly selected students from this university will be more than 67 in.?
+
+
+\section*{Solution:}
+
+Let $X$ be the height. $X \sim N(\mu = 66, \sigma^2 = 2^2)$, and 
+\[
+\frac{\bar{X} - 66}{\frac{2}{\sqrt{26}}} = Z \sim N(0, 1^2).
+\]
+Then,
+\[
+P(\bar{X} > 170) = P\left(Z > 2\sqrt{26}\right) = 0.
+\]
+
+
+\section*{4.2.5}
+
+Let $X_1, X_2, \dots, X_5$ be a random sample from the normal distribution with mean 55 and variance 223. Let
+\[
+Y = \frac{\sum_{i=1}^5 (X_i - 55)^2}{223}
+\]
+and
+\[
+Z = \frac{\sum_{i=1}^5 (X_i - \bar{X})^2}{223}.
+\]
+
+\begin{enumerate}
+    \item[(a)] Find the distribution of the random variables $Y$ and $Z$.
+    \item[(b)] Are $Y$ and $Z$ independent?
+    \item[(c)] Find
+    \begin{enumerate}
+        \item[(i)] $P(0.554 < Y < 0.831)$, and
+        \item[(ii)] $P(0.297 < Z < 0.484)$.
+    \end{enumerate}
+\end{enumerate}
+
+
+\section*{Solution:}
+
+
+\subsection*{(a) Distribution of the random variables $Y$ and $Z$}
+
+\textbf{Distribution of $Y$:}  
+The term $(X_i - 55)^2$ arises because $X_i \sim N(\mu = 55, \sigma^2 = 223)$.  
+The scaled sum of squared deviations, $\sum_{i=1}^5 (X_i - 55)^2$, follows a chi-square distribution with degrees of freedom equal to the sample size ($n = 5$).  
+Thus:
+\[
+Y = \frac{\sum_{i=1}^5 (X_i - 55)^2}{223} \sim \chi^2_5.
+\]
+
+\textbf{Distribution of $Z$:}  
+The term $(X_i - \bar{X})^2$ represents deviations from the sample mean $\bar{X}$.  
+The sum of squared deviations, $\sum_{i=1}^5 (X_i - \bar{X})^2$, follows a chi-square distribution with $n - 1$ degrees of freedom (since one parameter, the mean, is estimated).  
+Thus:
+\[
+Z = \frac{\sum_{i=1}^5 (X_i - \bar{X})^2}{223} \sim \chi^2_4.
+\]
+
+\subsection*{(b) Are $Y$ and $Z$ independent?}
+
+Since $Y$ involves deviations from the population mean (55), and $Z$ involves deviations from the sample mean ($\bar{X}$), their sources of variability are distinct.  
+For a random sample from a normal distribution, the total variance can be partitioned into between-sample and within-sample variance.  
+Thus:
+\[
+Y \text{ and } Z \text{ are independent.}
+\]
+
+\subsection*{(c) Calculations}
+
+\begin{itemize}
+    \item[(i)] $P(0.62 \leq Y \leq 0.76) = 0.0075$
+    \item[(ii)] $P(0.77 \leq Z \leq 0.95) = 0.0251$
+\end{itemize}
+
+
+\section*{4.2.6}
+
+Let $X$ and $Y$ be independent chi-square random variables with 14 and 5 degrees of freedom, respectively. Find:
+\begin{enumerate}
+    \item[(a)] $P(|X - Y| \leq 11.15)$,
+    \item[(b)] $P(|X - Y| \geq 3.8)$.
+\end{enumerate}
+
+\section*{Solution:}
+
+
+Let $X$ and $Y$ be independent chi-square random variables with 14 and 5 degrees of freedom, respectively. The random variable $D = X - Y$ can be approximated as normally distributed due to the central limit theorem.
+
+\subsection*{(a) Find $P(|X - Y| \leq 11.15)$}
+
+\textbf{Step 1: Mean and variance of $D$}
+
+\[
+\mu_X = 14, \quad \sigma_X^2 = 2 \times 14 = 28,
+\]
+\[
+\mu_Y = 5, \quad \sigma_Y^2 = 2 \times 5 = 10.
+\]
+
+For $D = X - Y$:
+\[
+\mu_D = \mu_X - \mu_Y = 14 - 5 = 9,
+\]
+\[
+\sigma_D^2 = \sigma_X^2 + \sigma_Y^2 = 28 + 10 = 38, \quad \sigma_D = \sqrt{38} \approx 6.16.
+\]
+
+Thus, $D \sim N(9, 38)$.
+
+\textbf{Step 2: Standardize the inequality}
+
+We need:
+\[
+P(|X - Y| \leq 11.15) = P(-11.15 \leq D \leq 11.15).
+\]
+
+Convert to the standard normal distribution ($Z$):
+\[
+Z = \frac{D - \mu_D}{\sigma_D}.
+\]
+
+Substitute:
+\[
+P(-11.15 \leq D \leq 11.15) = P\left(\frac{-11.15 - 9}{6.16} \leq Z \leq \frac{11.15 - 9}{6.16}\right).
+\]
+
+Simplify:
+\[
+P(-11.15 \leq D \leq 11.15) = P(-3.27 \leq Z \leq 0.35).
+\]
+
+\textbf{Step 3: Use the standard normal table}
+
+From the standard normal table:
+\[
+P(Z \leq -3.27) \approx 0.0005, \quad P(Z \leq 0.35) \approx 0.6368.
+\]
+
+Thus:
+\[
+P(-3.27 \leq Z \leq 0.35) = P(Z \leq 0.35) - P(Z \leq -3.27),
+\]
+\[
+P(-3.27 \leq Z \leq 0.35) = 0.6368 - 0.0005 = 0.6363.
+\]
+
+\textbf{Final Answer for (a):}
+\[
+P(|X - Y| \leq 11.15) \approx 0.6363.
+\]
+
+\subsection*{(b) Find $P(|X - Y| \geq 3.8)$}
+
+\textbf{Step 1: Rewrite the inequality}
+
+\[
+P(|X - Y| \geq 3.8) = 1 - P(|X - Y| < 3.8).
+\]
+
+\textbf{Step 2: Standardize the inequality}
+
+\[
+P(|X - Y| < 3.8) = P(-3.8 \leq D \leq 3.8).
+\]
+
+Standardize:
+\[
+P(-3.8 \leq D \leq 3.8) = P\left(\frac{-3.8 - 9}{6.16} \leq Z \leq \frac{3.8 - 9}{6.16}\right).
+\]
+
+Simplify:
+\[
+P(-3.8 \leq D \leq 3.8) = P(-2.07 \leq Z \leq -0.84).
+\]
+
+\textbf{Step 3: Use the standard normal table}
+
+From the standard normal table:
+\[
+P(Z \leq -2.07) \approx 0.0192, \quad P(Z \leq -0.84) \approx 0.2005.
+\]
+
+Thus:
+\[
+P(-2.07 \leq Z \leq -0.84) = P(Z \leq -0.84) - P(Z \leq -2.07),
+\]
+\[
+P(-2.07 \leq Z \leq -0.84) = 0.2005 - 0.0192 = 0.1813.
+\]
+
+\textbf{Step 4: Find $P(|X - Y| \geq 3.8)$}
+
+\[
+P(|X - Y| \geq 3.8) = 1 - P(-3.8 \leq D \leq 3.8),
+\]
+\[
+P(|X - Y| \geq 3.8) = 1 - 0.1813 = 0.8187.
+\]
+
+\textbf{Final Answer for (b):}
+\[
+P(|X - Y| \geq 3.8) \approx 0.8187.
+\]
+
+
+\section*{4.2.15}
+
+Find the variance of $S^2$, assuming the sample $X_1, X_2, \dots, X_n$ is from $N(\mu, \sigma^2)$.
+
+\section*{Solution:}
+
+If $X_1, X_2, \dots, X_n$ is from $N(\mu, \sigma^2)$,  
+then, by Theorem 4.2.8, $\frac{(n-1)S^2}{\sigma^2}$ is from $\chi^2_{(n-1)}$.
+
+Then, by Exercise 4.2.13:
+\[
+\text{Var} \left[ \frac{(n-1)S^2}{\sigma^2} \right] = 2(n-1).
+\]
+
+Since $\text{Var}(aX) = a^2\text{Var}(X)$:
+\[
+\text{Var} \left( \frac{(n-1)^2}{\sigma^4} \text{Var}(S^2) \right) = 2(n-1).
+\]
+
+Simplifying after multiplying by $\frac{\sigma^4}{(n-1)^2}$, we obtain:
+\[
+\text{Var}(S^2) = \frac{2\sigma^4}{n-1}.
+\]
+
+\section*{4.2.23}
+
+Let $X_1, X_2, \dots, X_{n_1}$ be a random sample from a normal population with mean $\mu_1$ and variance $\sigma^2$, and $Y_1, Y_2, \dots, Y_{n_2}$ be a random sample from an independent normal population with mean $\mu_2$ and variance $\sigma^2$. Show that
+\[
+T = \frac{\left(\bar{X} - \bar{Y}\right) - \left(\mu_1 - \mu_2\right)}{\sqrt{\frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2} \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim T_{(n_1 + n_2 - 2)}.
+\]
+
+\section*{Solution:}
+
+If $X_1, X_2, \dots, X_{n_1}$ is a random sample from a normal population with mean $\mu_1$ and variance $\sigma^2$, and if $Y_1, Y_2, \dots, Y_{n_2}$ is a random sample from an independent normal population with mean $\mu_2$ and variance $\sigma^2$, then:
+\[
+\bar{X} \sim N\left(\mu_1, \frac{\sigma^2}{n_1}\right), \quad \bar{Y} \sim N\left(\mu_2, \frac{\sigma^2}{n_2}\right), \quad \frac{(n_1 - 1)S_1^2}{\sigma^2} \sim \chi^2_{(n_1 - 1)}, \quad \frac{(n_2 - 1)S_2^2}{\sigma^2} \sim \chi^2_{(n_2 - 1)}.
+\]
+
+Then:
+\[
+\bar{X} - \bar{Y} \sim N\left(\mu_1 - \mu_2, \frac{\sigma^2}{n_1} + \frac{\sigma^2}{n_2}\right), \quad \frac{(n_1 - 1)S_1^2}{\sigma^2} + \frac{(n_2 - 1)S_2^2}{\sigma^2} \sim \chi^2_{(n_1 + n_2 - 2)}.
+\]
+
+Thus:
+\[
+\frac{\bar{X} - \bar{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma^2}{n_1} + \frac{\sigma^2}{n_2}}} \sim N(0, 1),
+\]
+and:
+\[
+\frac{(n_1 - 1)S_1^2}{\sigma^2} + \frac{(n_2 - 1)S_2^2}{\sigma^2} \sim \chi^2_{(n_1 + n_2 - 2)}.
+\]
+
+Then, since the samples are independent, we have by definition that:
+\[
+\frac{\bar{X} - \bar{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma^2}{n_1} + \frac{\sigma^2}{n_2}} \cdot \sqrt{\frac{(n_1 - 1)S_1^2}{\sigma^2} + \frac{(n_2 - 1)S_2^2}{\sigma^2}} \Big/ \sqrt{n_1 + n_2 - 2}} \sim T_{(n_1 + n_2 - 2)}.
+\]
+
+This simplifies to:
+\[
+\frac{\bar{X} - \bar{Y} - (\mu_1 - \mu_2)}{\sqrt{\frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2} \cdot \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} \sim T_{(n_1 + n_2 - 2)}. \quad \text{Q.E.D.}
+\]
+
+
+\section*{4.2.26}
+
+Let the random variables $X_1, X_2, \dots, X_{10}$ be normally distributed with mean $8$ and variance $4$. Find a number $a$ such that
+\[
+P\left( \sum_{i=1}^{10} \left(\frac{X_i - 8}{2}\right)^2 \leq a \right) = 0.95.
+\]
+
+\section*{Solution:}
+
+Let $X$ and $Y$ be independent chi-square random variables with 14 and 5 degrees of freedom, respectively. The random variable $D = X - Y$ can be approximated as normally distributed due to the central limit theorem.
+
+\subsection*{(a) Find $P(|X - Y| \leq 11.15)$}
+
+\textbf{Step 1: Mean and variance of $D$}
+
+\[
+\mu_X = 14, \quad \sigma_X^2 = 2 \times 14 = 28,
+\]
+\[
+\mu_Y = 5, \quad \sigma_Y^2 = 2 \times 5 = 10.
+\]
+
+For $D = X - Y$:
+\[
+\mu_D = \mu_X - \mu_Y = 14 - 5 = 9,
+\]
+\[
+\sigma_D^2 = \sigma_X^2 + \sigma_Y^2 = 28 + 10 = 38, \quad \sigma_D = \sqrt{38} \approx 6.16.
+\]
+
+Thus, $D \sim N(9, 38)$.
+
+\textbf{Step 2: Standardize the inequality}
+
+We need:
+\[
+P(|X - Y| \leq 11.15) = P(-11.15 \leq D \leq 11.15).
+\]
+
+Convert to the standard normal distribution ($Z$):
+\[
+Z = \frac{D - \mu_D}{\sigma_D}.
+\]
+
+Substitute:
+\[
+P(-11.15 \leq D \leq 11.15) = P\left(\frac{-11.15 - 9}{6.16} \leq Z \leq \frac{11.15 - 9}{6.16}\right).
+\]
+
+Simplify:
+\[
+P(-11.15 \leq D \leq 11.15) = P(-3.27 \leq Z \leq 0.35).
+\]
+
+\textbf{Step 3: Use the standard normal table}
+
+From the standard normal table:
+\[
+P(Z \leq -3.27) \approx 0.0005, \quad P(Z \leq 0.35) \approx 0.6368.
+\]
+
+Thus:
+\[
+P(-3.27 \leq Z \leq 0.35) = P(Z \leq 0.35) - P(Z \leq -3.27),
+\]
+\[
+P(-3.27 \leq Z \leq 0.35) = 0.6368 - 0.0005 = 0.6363.
+\]
+
+\textbf{Final Answer for (a):}
+\[
+P(|X - Y| \leq 11.15) \approx 0.6363.
+\]
+
+\subsection*{(b) Find $P(|X - Y| \geq 3.8)$}
+
+\textbf{Step 1: Rewrite the inequality}
+
+\[
+P(|X - Y| \geq 3.8) = 1 - P(|X - Y| < 3.8).
+\]
+
+\textbf{Step 2: Standardize the inequality}
+
+\[
+P(|X - Y| < 3.8) = P(-3.8 \leq D \leq 3.8).
+\]
+
+Standardize:
+\[
+P(-3.8 \leq D \leq 3.8) = P\left(\frac{-3.8 - 9}{6.16} \leq Z \leq \frac{3.8 - 9}{6.16}\right).
+\]
+
+Simplify:
+\[
+P(-3.8 \leq D \leq 3.8) = P(-2.07 \leq Z \leq -0.84).
+\]
+
+\textbf{Step 3: Use the standard normal table}
+
+From the standard normal table:
+\[
+P(Z \leq -2.07) \approx 0.0192, \quad P(Z \leq -0.84) \approx 0.2005.
+\]
+
+Thus:
+\[
+P(-2.07 \leq Z \leq -0.84) = P(Z \leq -0.84) - P(Z \leq -2.07),
+\]
+\[
+P(-2.07 \leq Z \leq -0.84) = 0.2005 - 0.0192 = 0.1813.
+\]
+
+\textbf{Step 4: Find $P(|X - Y| \geq 3.8)$}
+
+\[
+P(|X - Y| \geq 3.8) = 1 - P(-3.8 \leq D \leq 3.8),
+\]
+\[
+P(|X - Y| \geq 3.8) = 1 - 0.1813 = 0.8187.
+\]
+
+\textbf{Final Answer for (b):}
+\[
+P(|X - Y| \geq 3.8) \approx 0.8187.
+\]
+
+
+\section*{4.3.1}
+
+The lifetime $X$ of a certain electrical fuse has the following pdf:
+\[
+f(x) = 
+\begin{cases} 
+\frac{1}{10}e^{-x/10}, & x > 0, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+Suppose two such fuses are in series and operate independently in a system. Find the pdf of the lifetime $Y$ of the system. (The system will work only if both of the fuses operate.)
+
+
+\section*{Solution:}
+
+The probability density function (pdf) of $X$ is:
+\[
+f(x) = \frac{1}{10}e^{-x/10}, \; x > 0.
+\]
+
+The cumulative distribution function (CDF) of $\tau_1$ is:
+\[
+F_{\tau_1}(t) = \int_0^t \frac{1}{10} e^{-x/10} \, dx = -e^{-x/10} \Big|_0^t = 1 - e^{-t/10}.
+\]
+
+Let $Y$ represent the life length of the system. Since the system operates as long as both fuses work, 
+\[
+Y = \min(\tau_1, \tau_2),
+\]
+where $\tau_1$ and $\tau_2$ are independent lifetimes of the two fuses. The CDF of $Y$ is:
+\[
+F_Y(y) = 1 - [1 - F_{\tau_1}(y)]^2.
+\]
+
+The pdf of $Y$ is given by:
+\[
+f_Y(y) = 2 f_{\tau_1}(y) [1 - F_{\tau_1}(y)],
+\]
+which simplifies to:
+\[
+f_Y(y) = 
+\begin{cases} 
+\frac{1}{5}e^{-y/5}, & 0 < y < \infty, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+\section*{4.3.4}
+
+Let $X_1, \dots, X_{10}$ be a random sample from $U[0, 1]$. Find the joint density of $Y_2$ and $Y_7$, where $Y_i, i = 1, 2, \dots, 10$ are order statistics of $X_1, \dots, X_{10}$.
+
+
+\section*{Solution:}
+
+\subsection*{Step 1: Order Statistics}
+The order statistics are defined as the sorted values of the sample:
+\[
+Y_1 \leq Y_2 \leq \dots \leq Y_{10},
+\]
+where $Y_2$ is the second smallest value and $Y_7$ is the seventh smallest value.
+
+\subsection*{Step 2: Joint Distribution of Order Statistics}
+The joint probability density function (PDF) of two order statistics $Y_2$ and $Y_7$ for a sample of size $n = 10$ is given by:
+\[
+f_{Y_2, Y_7}(y_2, y_7) = 
+\begin{cases} 
+\frac{n!}{(k-1)!(m-k-1)!(n-m)!} \, y_2^{k-1} (y_7 - y_2)^{m-k-1} (1 - y_7)^{n-m}, & 0 \leq y_2 \leq y_7 \leq 1, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+where:
+\begin{itemize}
+    \item $k = 2$ (index of $Y_2$),
+    \item $m = 7$ (index of $Y_7$),
+    \item $n = 10$ (sample size).
+\end{itemize}
+
+\subsection*{Step 3: Substitution and Simplification}
+Substitute $n = 10$, $k = 2$, and $m = 7$ into the formula:
+\[
+f_{Y_2, Y_7}(y_2, y_7) = 
+\begin{cases} 
+\frac{10!}{(2-1)!(7-2-1)!(10-7)!} \, y_2^{1} (y_7 - y_2)^{4} (1 - y_7)^{3}, & 0 \leq y_2 \leq y_7 \leq 1, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+Simplify the factorial terms:
+\[
+\frac{10!}{1! \cdot 4! \cdot 3!} = \frac{362880}{1 \cdot 24 \cdot 6} = 2520.
+\]
+
+Thus:
+\[
+f_{Y_2, Y_7}(y_2, y_7) = 
+\begin{cases} 
+2520 \, y_2 (y_7 - y_2)^4 (1 - y_7)^3, & 0 \leq y_2 \leq y_7 \leq 1, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+\subsection*{Step 4: Final Answer}
+The joint density of $Y_2$ and $Y_7$ is:
+\[
+f_{Y_2, Y_7}(y_2, y_7) = 
+\begin{cases} 
+2520 \, y_2 (y_7 - y_2)^4 (1 - y_7)^3, & 0 \leq y_2 \leq y_7 \leq 1, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+
+\section*{4.3.9}
+
+Let $X_1, \dots, X_n$ be a random sample from a normal population with mean 10 and variance 4. What is the probability that the largest observation is greater than 10?
+
+
+\section*{Solution:}
+
+Let $X_1, \dots, X_n$ be a random sample from $N(10, 4)$. The probability that the largest observation is greater than 10 is:
+\[
+P(Y_n > 10) = 1 - P(Y_n \leq 10).
+\]
+
+The CDF $F_n(y)$ of $Y_n$ is $[F(y)]^n$, where $F(y)$ is the CDF of $X$ evaluated at $y$.
+
+Thus:
+\[
+P(Y_n \leq y) = F_n(y) = [F(y)]^n = [P(X \leq y)]^n.
+\]
+
+For the normal distribution:
+\[
+P(X \leq y) = P\left(Z \leq \frac{y - 10}{2}\right).
+\]
+
+Substituting:
+\[
+P(Y_n \leq y) = \left[P\left(Z \leq \frac{y - 10}{2}\right)\right]^n.
+\]
+
+Thus:
+\[
+P(Y_n > y) = 1 - P(Y_n \leq y),
+\]
+\[
+P(Y_n > y) = 1 - \left[P\left(Z \leq \frac{y - 10}{2}\right)\right]^n.
+\]
+
+For \( y = 10 \), this simplifies to:
+\[
+P(Y_n > 10) = 1 - \left[P(Z \leq 0)\right]^n,
+\]
+\[
+P(Y_n > 10) = 1 - (0.5)^n.
+\]
+
+\newpage % Forces the following content to appear on a new page
+
+\section*{\LARGE Projects}
+
+\section*{Project 1:}
+
+\begin{enumerate}
+    \item Generating normal random samples (suppose $\mu$, $\sigma^2$ fixed) calculate the median, sample mean, and variance with different sample sizes, for example, $n = 100$, $500$, or $1000$ and compare with the mean and variance of the population. Draw a table or figure to show them, if necessary.
+\end{enumerate}
+
+
+\section*{Solution:}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    captionpos=b,
+    language=Python
+}
+
+
+
+\section*{Python Code Generating and Analyze Normal Samples}
+
+\lstset{language=Python}
+\begin{lstlisting}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Parameters of the population
+mu = 50  # Population mean
+sigma2 = 25  # Population variance
+sigma = np.sqrt(sigma2)  # Population standard deviation
+
+# Sample sizes
+sample_sizes = [100, 500, 1000]
+
+# To store results
+results = []
+
+# Generate samples and calculate statistics
+for n in sample_sizes:
+    # Generate a normal random sample
+    sample = np.random.normal(mu, sigma, n)
+
+    # Calculate statistics
+    sample_mean = np.mean(sample)
+    sample_median = np.median(sample)
+    sample_variance = np.var(sample, ddof=1)  # Sample variance (unbiased)
+
+    # Append results
+    results.append({
+        "Sample Size": n,
+        "Sample Mean": sample_mean,
+        "Sample Median": sample_median,
+        "Sample Variance": sample_variance
+    })
+
+# Convert results to a DataFrame
+df_results = pd.DataFrame(results)
+
+# Display the results in a table
+print("Sample Statistics Comparison")
+print(df_results)
+
+# Plot the sample mean and variance compared to the population
+plt.figure(figsize=(12, 6))
+
+# Plot sample mean
+plt.subplot(1, 2, 1)
+plt.plot(sample_sizes, df_results["Sample Mean"], marker='o', label="Sample Mean")
+plt.axhline(y=mu, color='r', linestyle='--', label="Population Mean")
+plt.xlabel("Sample Size")
+plt.ylabel("Mean")
+plt.title("Sample Mean vs Population Mean")
+plt.legend()
+
+# Plot sample variance
+plt.subplot(1, 2, 2)
+plt.plot(sample_sizes, df_results["Sample Variance"], marker='o', label="Sample Variance")
+plt.axhline(y=sigma2, color='r', linestyle='--', label="Population Variance")
+plt.xlabel("Sample Size")
+plt.ylabel("Variance")
+plt.title("Sample Variance vs Population Variance")
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+\end{lstlisting}
+
+
+\begin{figure}[H] % The H option forces the figure to be placed exactly here
+\centering
+
+\includegraphics[width=1\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 4/figs/project_1a.png}
+\caption{Project 1}
+\end{figure}
+
+\begin{figure}[H] % The H option forces the figure to be placed exactly here
+\centering
+
+\includegraphics[width=1\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 4/figs/project_1b.png}
+\caption{Project 1}
+\end{figure}
+
+\section*{Project 2:}
+\begin{enumerate}
+    \item Drawing 10,000 samples, each sample of size 15 (suppose $\mu$, $\sigma^2$ fixed)\\
+    Compute the mean of each sample and draw a histogram for the means. This will be an approximate sampling distribution of $\bar{X}$ for a fixed sample of size 15, and compare with the pdf figure of $\bar{X} \sim N(\mu, \sigma^2 / 15)$.
+\end{enumerate}
+
+\section*{Solution:}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    commentstyle=\color{gray},
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    captionpos=b,
+    language=Python
+}
+
+\section*{Python Code for Sampling Distribution of the Sample Mean}
+
+\lstset{language=Python}
+\begin{lstlisting}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+# Parameters of the population
+mu = 50  # Population mean
+sigma2 = 25  # Population variance
+sigma = np.sqrt(sigma2)  # Population standard deviation
+sample_size = 15  # Sample size
+num_samples = 10000  # Number of samples
+
+# Generate 10,000 samples, each of size 15
+sample_means = []
+for _ in range(num_samples):
+    sample = np.random.normal(mu, sigma, sample_size)
+    sample_means.append(np.mean(sample))
+
+# Convert sample means to a NumPy array
+sample_means = np.array(sample_means)
+
+# Compute the parameters of the sampling distribution of the sample mean
+sampling_sigma = sigma / np.sqrt(sample_size)  # Standard deviation of the sampling distribution
+
+# Plot histogram of sample means
+plt.figure(figsize=(10, 6))
+plt.hist(sample_means, bins=30, density=True, alpha=0.6, color='blue', label='Histogram of Sample Means')
+
+# Plot theoretical normal distribution
+x = np.linspace(mu - 4 * sampling_sigma, mu + 4 * sampling_sigma, 1000)
+theoretical_pdf = norm.pdf(x, loc=mu, scale=sampling_sigma)
+plt.plot(x, theoretical_pdf, 'r-', label='Theoretical PDF ($N(\\mu, \\sigma^2/15)$)')
+
+# Add labels and legend
+plt.title('Sampling Distribution of the Sample Mean (n=15)')
+plt.xlabel('Sample Mean')
+plt.ylabel('Density')
+plt.legend()
+plt.grid()
+plt.show()
+\end{lstlisting}
+
+\begin{figure}[H] % The H option forces the figure to be placed exactly here
+\centering
+
+\includegraphics[width=1\textwidth]{D:/Masters NPU Semeter/3rd Semester/Statistics/Homework/Submit/Homework 4/figs/project_2.png}
+\caption{Project 2}
+\end{figure}
+
+\end{document}
